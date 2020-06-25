@@ -6,7 +6,7 @@ import fetch from 'fetch';
 export default Component.extend({
   classNames: ['pokemon-list'],
   loadingMsg: null,
-  urlDefault: 'http://pokeapi.co/api/v2/pokemon/?limit=12',
+  urlDefault: 'https://pokeapi.co/api/v2/pokemon/?limit=12',
   pokemonList: null,
   pokemonData: null,
   dropdownValue: null,
