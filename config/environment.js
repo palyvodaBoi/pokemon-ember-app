@@ -4,7 +4,7 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'pokemon-ember-app',
     environment,
-    rootURL: '/',
+    rootURL: '/pokemon-ember-app',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
