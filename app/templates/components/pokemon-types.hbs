@@ -1,0 +1,6 @@
+<select name="types" onchange={{onchange}}>
+  <option disabled selected> -- Choose Pokemon Type -- </option>
+  {{#each options as |type|}}
+    <option value={{type.url}}>{{type.name}}</option>
+  {{/each}}
+</select>

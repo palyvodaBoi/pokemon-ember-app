@@ -1,0 +1,15 @@
+{{#if isActive}}
+  <div class="ribbon">
+    <span class="ribbon-label">Selected</span>
+  </div>
+{{/if}}
+<div class="pokemon-card_image">
+  <img src={{image}} alt={{name}} />
+</div>
+
+<div class="pokemon-card_info">
+  <p class="name">{{name}}</p>
+  {{#each types as |type|}}
+    <span class='label {{type.type.name}}'>{{type.type.name}}</span>
+  {{/each}}
+</div>

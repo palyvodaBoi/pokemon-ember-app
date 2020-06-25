@@ -1,0 +1,37 @@
+<div class='pokemon-details_card'>
+  <div class='card_image-wrapper'>
+    <img src={{card.sprites.front_default}} alt='Pokemon details image' />
+  </div>
+
+  <div>
+    <p class='card_name'>{{card.name}} #{{formattedID}}</p>
+
+    <div class='card_table-wrapper'>
+      <table class='table-wrapper_table'>
+        <thead>
+        <tr>
+          <th>Type</th>
+          <th>Fire</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {{#each formattedStats as |stat|}}
+          <tr>
+            <td>{{stat.stat.name}}</td>
+            <td>{{stat.base_stat}}</td>
+          </tr>
+        {{/each}}
+        <tr>
+          <td>Weight</td>
+          <td>{{card.weight}}</td>
+        </tr>
+        <tr>
+          <td>Total Moves</td>
+          <td>{{card.moves.length}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

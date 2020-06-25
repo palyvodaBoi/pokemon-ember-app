@@ -1,0 +1,36 @@
+<div class="pokemon-list_wrapper">
+  {{#if dropdownOptions}}
+    {{pokemon-types options=dropdownOptions
+                    dropdownValue=dropdownValue
+                    onchange=(action 'setDropdownValue')}}
+  {{/if}}
+
+  {{#if pokemonData}}
+    <div class="pokemon-list_cards">
+      {{#each pokemonData as |pokemon|}}
+        {{pokemon-card pID=pokemon.id
+                       image=pokemon.sprites.front_default
+                       name=pokemon.name
+                       types=pokemon.types
+                       isActive=(eq pokemon.id activeCardID)
+                       click=(action 'setActiveCard' pokemon.id)}}
+      {{/each}}
+    </div>
+
+    <div class='buttons'>
+      <button disabled={{isPrevDisabled}} onclick={{action 'flipPokemonList' pokemonList.previous}}>
+        Load Prev
+      </button>
+      <button disabled={{isNextDisabled}} onclick={{action 'flipPokemonList' pokemonList.next}}>
+        Load Next
+      </button>
+    </div>
+
+  {{else}}
+    <span class="message">{{loadingMsg}}</span>
+  {{/if}}
+</div>
+
+{{#if activeCardID}}
+  {{pokemon-details card=activeCard}}
+{{/if}}
